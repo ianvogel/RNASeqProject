@@ -10,20 +10,20 @@
 ################################################################################
 rm(list=ls())                                        # remove all the objects from the R session
 
-workDir <- "/Users/irv001/Documents/Bio 364/RNAseq Project 3/SARTools Sailfish"      # working directory for the R session
+workDir <- "~/Documents/Bio 364/RNAseq Project 3/SARTools.DESeq2.genes_batch"      # working directory for the R session
 
-projectName <- "SARTools.Sailfish.genes"                         # name of the project
+projectName <- "SARTools.DESeq2.transcripts"                         # name of the project
 author <- "Ian Vogel"                                # author of the statistical analysis/report
 
-targetFile <- "./genes.target.txt"                           # path to the design/target file
-rawDir <- "./"                                      # path to the directory containing raw counts files
-featuresToRemove <- NULL      # names of the features to be removed
+targetFile <- "../SARtools/transcripts.target.txt"                           # path to the design/target file
+rawDir <- "../SARtools"                                      # path to the directory containing raw counts files
+featuresToRemove <- NULL    # names of the features to be removed
                         # (specific HTSeq-count information and rRNA for example)
-                     # NULL if no feature to remove
+                      # NULL if no feature to remove
 
 varInt <- "Treatment"                                    # factor of interest
 condRef <- "Untreated"                                      # reference biological condition
-batch <- NULL                                        # blocking factor: NULL (default) or "batch" for example
+batch <- "batch"                                       # blocking factor: NULL (default) or "batch" for example
 
 idColumn = 1                                         # column with feature Ids (usually 1)
 countColumn = 5                                      # column with counts  (2 for htseq-count, 7 for featurecounts, 5 for RSEM/Salmon, 4 for kallisto)
